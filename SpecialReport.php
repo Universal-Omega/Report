@@ -112,8 +112,7 @@ class SpecialReport extends SpecialPage {
 			$dbw->insert( 'report_reports', [
 				'report_revid' => (int)$par,
 				'report_reason' => $request->getText('reason'),
-				'report_user' => $wgUser->getId(),
-				'report_user_text' => $wgUser->getName(),
+				'report_actor' => $wgUser->getId(),
 				'report_timestamp' => wfTimestampNow()
 			], __METHOD__ );
 			$dbw->endAtomic(__METHOD__);
